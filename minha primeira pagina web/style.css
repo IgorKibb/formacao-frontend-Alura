@@ -1,0 +1,243 @@
+header{
+    background: #BBBBBB;
+    padding: 20px 0; /*espaçamento interno*/
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.caixa{
+    width: 940px; /*margem padrao, sempre que psossivel usar esta margem*/
+    position: relative;
+    margin: 0 auto; /*para calcular as margens junto com a caixa 940px automaticamente*/
+}
+
+nav{
+     position: absolute;
+     top: 110px;
+     right: 0;
+}
+nav li{
+    display: inline;
+    margin: 0 0 0 15px;
+}
+nav a{
+    text-transform: uppercase; /* letras maiusculas */
+    color: #000000;
+    font-weight: bold; /* negrito */
+    font-size: 22px; /* tamanho */
+    text-decoration: none; /* sem sublinhado, sem decoração */
+}
+nav a:hover{
+    color:#C78C19;
+    text-decoration: underline;
+}
+/*main{
+   
+}*/
+.produtos{
+    width: 940px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+.produtos li {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    padding: 50px 0;
+    margin: 0 1.5%;
+    padding: 30px 20px; /*espaçamento cima-baixo, laterais*/
+    box-sizing: border-box; /*os px do padding estarão dentro da width sem quebra*/
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+.produtos li:hover{
+    border-color:#C78C19;
+}
+
+.produtos li:active{
+    border-color:#C78C19;
+}
+
+.produtos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+.produtos li:hover h2{
+    font-size: 34px;
+}
+.descricao{
+    font-size: 18px;
+}
+.preco{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer{
+    text-align: center;
+    padding: 40px 0;
+    background: url(bg.jpg);
+}
+
+.copyright{
+    color:#BBBBBB;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+form{
+    margin: 40px 0;
+}
+
+form label, form legend{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+.input-padrao{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 20px;
+    width: 50%;
+}
+
+.checkbox{
+    margin: 20px 0;
+}
+.enviar{
+    width: 40%;
+    padding: 15px 0;
+    margin-bottom:10px;
+    background:#C78C19;
+    color:#FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition:all 0.3s ease; /*efeito fade in*/
+    opacity:0.9; /*efeito fade in*/
+}
+.enviar:hover{
+    opacity:1; /*efeito fade in*/
+    cursor: pointer;
+    transform: scale(1.05)
+}
+table{
+    margin: 40px 0 40px;
+}
+thead{
+    background: #555555;
+    color:#FFFFFF;
+    font-weight: bold;
+}
+td, th{
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
+
+/*pagina inicial*/
+.banner{
+    width: 100%;
+}
+.tituloPaginaInicial{
+    text-align: center;
+    font-size: 2em; /*em significa proprção, assim 2em signica 2x o tamanho da fonte*/
+    margin: 0 0 1em;
+    clear: left; /*para limpar o efeito float*/
+}
+.principal{
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 0 auto;
+}
+.principal p{
+    margin: 0 0 1em;
+}
+.principal strong{
+    font-weight: bold;
+}
+.principal em{
+    font-style: italic;
+}
+.utensilios{
+    width:120px;
+    float: left; /*para flutuar a imagem com texto ou objeto ao redor*/
+    margin: 0 20px 20px 0;
+}
+.mapa{
+    padding: 3em 0;
+    background: linear-gradient(#FEFEFE, #888888); /*gradiente*/
+}
+.mapaConteudo{
+    width: 940px;
+    margin: 0 auto;
+}
+.mapa p{
+    margin: 0 0 2em;
+    text-align: center;
+}
+.bene{
+    padding: 3em 0;
+    background: #888888;
+}
+.conteudoBene{
+    width: 640px;
+    margin:0 auto;
+}
+.itens{
+    line-height: 1.5;
+}
+.itens:first-child{
+    font-weight: bold;
+}
+.itens:before{
+    content: "٭"
+}
+.lista{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+.banner2{
+    width: 60%;
+    opacity: 1;
+    box-shadow: 10px 10px 10px 0 #000000;
+}
+.banner2:hover{
+    transition: 0.4s;
+    opacity: 0.5;
+}
+.videoAmostra{
+    width: 560px;
+    margin: 2em auto;
+}
+/* main > p{} transforma apenas o filho direto da main, ou seja, apenas 
+o primeiro paragrafo. Assim, todo e qaualquer uso de > vai se referenciar
+apenas ao filho ou filhos diretos da área em que se encontra. 
+[ESYUDAR MAIS SOBRE "SELETORES AVANÇADOS DO CSS"]*/
+
+/* calc() usado para o proprio CSS saber a  proporção exata 
+automaticamente do elemento, exemplo: width: calc(30%-30px)
+[ESTUDAR MAIS SOBRE]*/
+
+@media screen and (max-width: 480px) {
+    .caixa, .principal, .mapaConteudo, .conteudoBene, .videoAmostra{
+        width: auto;
+    }
+    .videoAmostra{
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+    }
+    nav{
+        position: static;
+    }
+    .lista, .banner2{
+        width: 100%;
+    }
+}
