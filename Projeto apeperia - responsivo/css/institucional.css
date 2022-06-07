@@ -71,7 +71,7 @@
     }
 
     .institucional__video {
-        align-self: flex-end;
+        align-self: flex-start;
 
         width: 375px;
     }
