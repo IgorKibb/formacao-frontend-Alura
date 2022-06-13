@@ -1,32 +1,40 @@
 var titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida Nutricionista"; //para manipular o conteudo de texto.
 
-var paciente = document.querySelector("#primeiro-paciente");
+var pacientes = document.querySelectorAll(".paciente"); //querrSelectorAll irá retornar uma array de todos os elementos que tem essa classe ou id
 
-var tdPeso = paciente.querySelector(".info-peso");
-var peso = tdPeso.textContent;
+for (var i = 0; i < pacientes.length; i++){
 
-var tdAltura = paciente.querySelector(".info-altura");
-var altura = tdAltura.textContent;
+    var paciente = pacientes[i];//um pequeno "truque", criando a variável paciente, que será um atalho para pacientes[i] assim, não se faz necessário adiconar [i] encada paciente que o loop fizer.
+    var tdPeso = paciente.querySelector(".info-peso");
+    var peso = tdPeso.textContent;
 
-var tdImc = paciente.querySelector(".info-imc");
+    var tdAltura = paciente.querySelector(".info-altura");
+    var altura = tdAltura.textContent;
 
-var pesoEhValido = true;
-var alturaEhValida = true;
+    var tdImc = paciente.querySelector(".info-imc");
 
-if (peso <=0 || peso >=1000){ //validação
-    console.log("peso inválido!");
-    pesoEhValido = false;
-    tdImc.textContent = "Pesso inválido";
-}
-if (altura <=0 || altura >=3.00){
-    console.log("altura inválida!");
-    alturaEhValida = false;
-    tdImc.textContent = "Altura inválida";
-}
+    var pesoEhValido = true;
+    var alturaEhValida = true;
 
-if(pesoEhValido && alturaEhValida){ //outra validação
-    var imc = peso / (altura * altura);
-    tdImc.textContent = imc;
+    if (peso <=0 || peso >=1000){ //validação
+        console.log("peso inválido!");
+        pesoEhValido = false;
+        tdImc.textContent = "Peso inválido";
+        paciente.classList.add("paciente-invalido"); // mesma função que a debaixo, pórem da forma correta de alterar a estilização.
+        //paciente.style.backgroundColor = "lightcoral"; //para alterar a estilização do html
+    }
+    if (altura <=0 || altura >=3.00){
+        console.log("altura inválida!");
+        alturaEhValida = false;
+        tdImc.textContent = "Altura inválida";
+        paciente.classList.add("paciente-invalido");
+       // paciente.style.backgroundColor = "lightcoral";
+    }
+
+    if(pesoEhValido && alturaEhValida){ //outra validação
+        var imc = peso / (altura * altura);
+        tdImc.textContent = imc.toFixed(2); //para delimitar a quantidade de casas decimais toFixed.
+    }
 }
 console.log(imc);
