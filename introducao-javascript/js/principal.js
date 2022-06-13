@@ -37,4 +37,36 @@ for (var i = 0; i < pacientes.length; i++){
         tdImc.textContent = imc.toFixed(2); //para delimitar a quantidade de casas decimais toFixed.
     }
 }
-console.log(imc);
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");//sempre lembrar da tralha ou ponto do id ou classeS
+botaoAdicionar.addEventListener("click", function(event) {
+    event.preventDefault(); //previne o comportamento padrão
+    
+    var form = document.querySelector("#form-adiciona");
+
+    var nome = form.nome.value; //pra capturar o valor do imput
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    var pacienteTr = document.createElement("tr"); // criar um elemento tr no html
+
+    var nomeTd = document.createElement("td");
+    var pesoTd = document.createElement("td");
+    var alturaTd = document.createElement("td");
+    var gorduraTd = document.createElement("td");
+    var imcTd = document.createElement("td");
+
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = gordura;
+
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr); // colocar o novo paciente na tabela
+});
