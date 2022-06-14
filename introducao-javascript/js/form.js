@@ -6,11 +6,30 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     var paciente = obtemPacienteDoFormulario(form);
     var pacienteTr = montaTr(paciente);
+    
+    var erros = validaPaciente(paciente);
+    if(erros.length > 0 ){
+        exibeMensagemDeErro(erros);
+        return; //return vazio para sair imediatemante da função.
+    }
 
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTr); // colocar o novo paciente na tabela
     form.reset(); //para resetar os campos do formulario.
+
+    var mensagensErro = document.querySelector("#mensagens-erro");
+    mensagensErro.innerHTML = "";
 });
+function exibeMensagemDeErro(erros){
+    var ul = document.querySelector("#mensagens-erro");
+    ul.innerHTML = ""; //innerHTML controla um elemento interno da html.
+
+    erros.forEach(function(erro){
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    })
+}
 
 function obtemPacienteDoFormulario(form){
     var paciente = { //entre as chaves se cria um objeto
@@ -56,4 +75,28 @@ function montaTd(dado, classe){
     td.textContent = dado;
     td.classList.add(classe);
     return td;
+}
+
+function validaPaciente(paciente){
+    var erros = []; //array
+
+    if(paciente.nome.length == 0){
+        erros.push("O nome nao pode ficar em branco");
+    }
+    if(!validaPeso(paciente.peso)) erros.push("Peso é inválido"); // empurra para para o  array.
+    // quando o if for simples como neste caso, então podemos remosver as chaves e colocar na mesma linha.
+    
+    if(!validaAltura(paciente.altura)){
+     erros.push("Altura inválida");
+    }
+    if(paciente.gordura.length == 0){
+        erros.push("Deve preencher o campo de gordura");
+    }
+    if(paciente.altura.length == 0){
+        erros.push("Preencha os campos abaixo.");
+    }
+    if(paciente.peso.length == 0){
+        erros.push("Preencha os campos abaixo.");
+    }
+    return erros;
 }
