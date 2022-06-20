@@ -5,21 +5,25 @@ botaoAdicionar.addEventListener("click", function(event) {
     var form = document.querySelector("#form-adiciona");
 
     var paciente = obtemPacienteDoFormulario(form);
-    var pacienteTr = montaTr(paciente);
     
     var erros = validaPaciente(paciente);
     if(erros.length > 0 ){
         exibeMensagemDeErro(erros);
         return; //return vazio para sair imediatemante da função.
     }
+    adicionaPacientesNaTabela(paciente);
 
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr); // colocar o novo paciente na tabela
     form.reset(); //para resetar os campos do formulario.
 
     var mensagensErro = document.querySelector("#mensagens-erro");
     mensagensErro.innerHTML = "";
 });
+function adicionaPacientesNaTabela(paciente){
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr); // colocar o novo paciente na tabela
+};
+
 function exibeMensagemDeErro(erros){
     var ul = document.querySelector("#mensagens-erro");
     ul.innerHTML = ""; //innerHTML controla um elemento interno da html.
@@ -29,7 +33,7 @@ function exibeMensagemDeErro(erros){
         li.textContent = erro;
         ul.appendChild(li);
     })
-}
+};
 
 function obtemPacienteDoFormulario(form){
     var paciente = { //entre as chaves se cria um objeto
@@ -45,7 +49,7 @@ function obtemPacienteDoFormulario(form){
     //var peso = form.peso.value;
     //var altura = form.altura.value;
     //var gordura = form.gordura.value;
-}
+};
 
 function montaTr(paciente){
     var pacienteTr = document.createElement("tr"); // criar um elemento tr no html
@@ -68,14 +72,14 @@ function montaTr(paciente){
     pacienteTr.appendChild(montaTd(paciente.imc, "info-imc"));
 
     return pacienteTr;
-}
+};
 
 function montaTd(dado, classe){
     var td = document.createElement("td");
     td.textContent = dado;
     td.classList.add(classe);
     return td;
-}
+};
 
 function validaPaciente(paciente){
     var erros = []; //array
@@ -99,4 +103,4 @@ function validaPaciente(paciente){
         erros.push("Preencha os campos abaixo.");
     }
     return erros;
-}
+};
