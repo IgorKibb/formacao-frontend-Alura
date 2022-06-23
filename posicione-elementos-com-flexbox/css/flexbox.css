@@ -1,0 +1,35 @@
+.cabecalhoPrincipal .container{
+    display: flex;
+    align-items: center; /*alinhar os elementos que estao dentro do pai*/
+    justify-content: space-between;
+}
+
+.cabecalhoPrincipal-nav{ /*pai da lista*/
+    display: flex;
+}
+
+.rodapePrincipal-patrocinadores .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin-right: 5%;
+}
+.rodapePrincipal-contatoForm{
+    width: 25%;
+}
+.rodapePrincipal-contatoForm-fieldset{
+    display: flex;
+}
+.rodapePrincipal-navMap-list{
+    display: flex;
+    flex-flow: column wrap; /*substitui as duas linhas abaixo e faz a mesma coisa*/
+    /*flex-direction: column;
+    flex-wrap: wrap; /*para quebrar a coluna*/
+    height: 250px; /*tamanho da coluna a ser quebrada*/
+}
