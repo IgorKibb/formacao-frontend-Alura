@@ -33,3 +33,18 @@
     flex-wrap: wrap; /*para quebrar a coluna*/
     height: 250px; /*tamanho da coluna a ser quebrada*/
 }
+
+.conteudoPrincipal-cursos{
+    display: flex;
+    flex-wrap: wrap;
+}
+.conteudoPrincipal-cursos-link{
+    width: 23%;
+}
+
+.conteudoPrincipal-cursos-link:nth-child(4n){ /*multiplo de 4 [rever]*/
+    margin-right: 0;
+}
+.conteudoPrincipal-cursos-link:nth-child(4n+1){ /*multiplo de 4 [rever]*/
+    margin-left: 0;
+}
