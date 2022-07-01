@@ -22,11 +22,15 @@ function executaRegex(valores) {
 	var resultados	 = [];
     var resultado 	 = null;
 
-
+//apenas as próximas duas linhas são regex
+// o textoPattern é onde deve ser aplicado a expressão regular.
 	var objetoRegex  = new RegExp(textoPattern, 'g'); //'g' é uma flag do js para indicar global
 
 	while (resultado = objetoRegex.exec(textoTarget)) {
-
+// textoTargert é onde deve ser aplicado o alvo.
+//exemplo como um todo
+//var regex = /(\d\d)(\w)/g; //2 dígitos e 1 word char, dois grupos
+//var resultado = regex.exec('11a22b33c ');
 		if(resultado[0] === "") {
 			throw Error("Regex retornou valor vazio.");
 		}
