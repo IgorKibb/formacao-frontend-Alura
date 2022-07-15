@@ -18,12 +18,37 @@
       color: #47a138;
       font-size: 13px;
     }
+    .cta{
+    background-color: #47a138;
+    color: #ffffff;
+    display: inline-block;
+    font-family: sans-serif; 
+    font-size: 22px;
+    line-height: 55px;
+    text-size: 22px;
+    text-height: 55px;
+    text-decoration: none;
+    padding: 5px 20px;
+    width: 200px;
+    }
+    .vantagem-titulo{
+      font-family: sans-serif;
+      font: 15px;
+    }
+    .vantagem-texto{
+      color:#FFFFFF;
+      font-family: sans-serif;
+      font: 13px;
+    }
+    .vantagem-icone{
+      padding: 10px 0;
+    }
   
   </style>
 
 </head>
 <body>
-<table border="0" width="90%" cellspacing="0" cellpadding="0">
+<table border="1" width="90%" cellspacing="0" cellpadding="0">
   <tr bgcolor="#000000">
     <td align="center" class="cabecalho-logo"> <!--devemos depender menos do css pois muitos clients não dão suporte para alguns de suas propriedades-->
       <br>
@@ -92,101 +117,70 @@
       <img src="images/Bg_Cartao_Rodape.jpg" alt="">
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <a href="#" class="cta">
+        ACEITAR CONVITE
+      </a>
+      <br><br><br><br>
+    </td>
+  </tr>
+
+  <!--Parte verde-->
+  <tr bgcolor="47a138">
+    <td align="center">
+      <img src="images/Logo.jpg" alt="">
+    </td>
+  </tr>
+  <tr bgcolor="47a138">
+<!--Subgrid abaixo-->
+    <td>
+      <table>
+        <tr>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <img src="images/Icone_Cadastro_Facilitado.png" alt="" class="vantagem-icone">
+                  <span class="vantagem-titulo">
+                    Cadastro Fácil
+                  </span>
+                  <br>
+                  <span class="vantagem-texto">
+                    Ingresso simples, sem burocracia, sem análises extensas e com muita rapidez.
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <img src="images/Icone_Online.png" alt="" class="vantagem-icone">
+                  <span class="vantagem-titulo">
+                    100% Online
+                  </span>
+                  <br>
+                  <span class="vantagem-texto">
+                    Resolva tudo sem a necessidade de ir ao banco ou perder tempo ao telefone.
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      
+    </td>
+  </tr>
 </table>
 
  <!-- <center>
-    <table align="center" cellpadding="0" cellspacing="0" border="0" width="90%"><!--em email responsivo o aconselhavel é utilizar % para medidas
-      
-     <tbody>
-      <tr bgcolor="#0000000">
-        <td colspan="3" align="center" style="padding: 5px;">
-          <img src="images/Top_Logo.png" alt="ByteBank - digital de verdade">
-        </td>
-      </tr>
-      <tr>
-        <td colspan="3">&nbsp;</td>
-      </tr>
-      <tr>
-        <td width="100" rowspan="8">&nbsp;</td> <!--&nbsp é no break space, serve para deixar pequenos espaços
-        <td width="400" align="center">
-          <img src="images/Logo_ByteBank.png" alt="ByteBank">
-        </td>
-        <td width="100" rowspan="8">&nbsp;</td>
-      </tr>
-
-      <tr>
-        <td align="center">
-          <font size="6" face="Bariol, Arial, sans-serif"><br>
-            Oi, <strong>Natan Souza</strong><br><br>
-          </font>
-        </td>
-      </tr>
-
-      <tr>
-        <td align="center">
-          <font size="4" face="Bariol, Arial, sans-serif">
-            João Vicente convidou você para o banco mais digital que existe na atualidade!
-            <br><br>
-          </font>
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <a href="#" style="text-decoration: none">
-            <font size="3" face="Bariol, Arial, sans-serif" color="#47a138">
-              Veja o vídeo >
-            </font>
-          </a>
-
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-          <a href="#" style="text-decoration: none">
-            <font size="3" face="Bariol, Arial, sans-serif" color="#47a138">
-              Veja a apresentação >
-            </font>
-          </a>
-        </td>
-      </tr>
-
-      <tr>
-        <td align="center">
-          <img src="images/Bg_Cartao.jpg" alt="">
-        </td>
-      </tr>
-
-      <tr>
-        <td style="background: url(images/Bg_Nome_Cartao.jpg) repeat-y center;">
-          <font color="#FFFFFF" style="font-family: sans-serif; padding-left: 23%">
-            NATAN SOUZA
-          </font>
-        </td>
-      </tr>
-
-      <tr>
-        <td align="center">
-          <img src="images/Bg_Cartao_Rodape.jpg" alt="">
-        </td>
-      </tr>
-      <tr>
-        <td align="center">
-          <a href="#">
-            <img src="images/CTA.jpg" alt="">
-          </a>
-        </td>
-      </tr>
 
       <!-- Parte verde -
-      <tr bgcolor="#47a138">
-        <td rowspan="2"  bgcolor="#47a138"></td>
-        <td align="center"  bgcolor="#47a138">
-          <img src="images/Logo.jpg" alt="">
-        </td>
-        <td rowspan="2"  bgcolor="#47a138"></td>
-      </tr>
-      <tr bgcolor="#47a138">
-        <td align="center"  bgcolor="#47a138">
-         <table width="100%" border="0" cellspacing="0" cellpadding="0"  bgcolor="#47a138">
-          <tbody  bgcolor="#47a138">
+      
             <tr bgcolor="#47a138">
               <td  bgcolor="#47a138">
                 <img src="images/Icone_Cadastro_Facilitado.png" alt="">
