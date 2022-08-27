@@ -9,6 +9,9 @@ class NegocicaoController {
       this._negociacoesView = new NegociacoesView($('#negociacoesView'));
 
       this._negociacoesView.update(this._listaNegociacoes);
+      this._mensagem = new Mensagem();
+      this._mensagemView = new MensagemView($('#mensagemView'));
+      this._mensagemView.update(this._mensagem);
    }; //evitar de percorrer o DOM inúmeras vezes!!!
 
    adiciona (event){
@@ -33,6 +36,8 @@ class NegocicaoController {
          this._inputValor.value
       );*/
       this._listaNegociacoes.adiciona(this._criaNegociacao());
+      this._mensagem.texto = 'Negociação adicionada com sucesso!';
+      this._mensagemView.update(this._mensagem);
       this._limpaFormulario();
 
       //this._listaNegociacoes.negociacoes.length = 0; //uma maneira de vaziar uma array!!
