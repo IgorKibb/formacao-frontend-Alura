@@ -1,10 +1,10 @@
-class NegociacoesView{
+class NegociacoesView extends View{
 
-   constructor(elemento){
-      this._elemento = elemento;
-
+   constructor(elelmento){
+      super(elemento);
    };
-   _template(){
+
+   template(){
       return `
       <table class="table table-hover table-bordered">
         <thead>
@@ -42,8 +42,4 @@ class NegociacoesView{
                   model.negociacoes.forEach(n => total += n.volume);
                   return total;
                }() //= iife REVER*/
-
-   update(model){
-      this._elemento.innerHTML = this._template(model);
-   };
 };
