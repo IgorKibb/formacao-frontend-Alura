@@ -6,6 +6,7 @@ itens.forEach((elemento)=>{
     criaElemento(elemento);
 });
 
+
 form.addEventListener("submit", (evento)=>{
     evento.preventDefault();
     
@@ -26,9 +27,9 @@ form.addEventListener("submit", (evento)=>{
 
         atualizaElemento(itemAtual);
 
-        itens[existe.id] = itemAtual; //para atullizar o localStorage é necessário sobrescrever, apagar o anterior.
+        itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual; //para atullizar o localStorage é necessário sobrescrever, apagar o anterior.
     }else{
-        itemAtual.id = itens.length;
+        itemAtual.id = itens[itens.length -1] ? (itens[itens.length-1]).id + 1 : 0; //operador ternario, se positivo uma coisa, se negativo outra.
 
         criaElemento(itemAtual);
         itens.push(itemAtual);
@@ -41,18 +42,38 @@ form.addEventListener("submit", (evento)=>{
 });
 
 function criaElemento(item){
-    const novoItem = document.createElement('li');
+    const novoItem = document.createElement("li");
     novoItem.classList.add("item");
 
-    const numeroItem = document.createElement('strong');
+    const numeroItem = document.createElement("strong");
     numeroItem.innerHTML = item.quantidade;
     numeroItem.dataset.id = item.id;
     novoItem.appendChild(numeroItem);
     novoItem.innerHTML += item.nome;
 
+    novoItem.appendChild(botaoDeleta(item.id));
+
     lista.appendChild(novoItem);
 };
 
 function atualizaElemento(item){
-    document.querySelector("[data-id'"+item.id+"']").innerHTML = item.quantidade;
+    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade;
+};
+
+function botaoDeleta(id){
+    const elementoBotao = document.createElement("button");
+    elementoBotao.innerText = "X"; //o texto do botao.
+
+    elementoBotao.addEventListener("click", function() {//arrow function nao permite o this abaixo
+        deletaElemento(this.parentNode, id)
+    });
+
+    return elementoBotao;
+};
+
+function deletaElemento(tag, id){
+    tag.remove();
+
+    itens.splice(itens.findIndex(elemento => elemento.id === id), 1);
+    localStorage.setItem("itens", JSON.stringify(itens));
 };
