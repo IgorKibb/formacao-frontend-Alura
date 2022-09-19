@@ -1,0 +1,1 @@
+var consultaCEP = fetch('https://viacep.com.br/ws/01001000/json/'); //fetch assínocro e obrigatório o API como este.
