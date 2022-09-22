@@ -1,15 +1,28 @@
 async function buscaEndereco(cep){
+   var mensagemErro = document.getElementById('erro');
+   mensagemErro.innerHTML = "";
    try{
       var consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`)//fetch assínocro e obrigatório o API como este.
       var consultaCEpConvertida = await consultaCEP.json(); //await só é permmitido dentro de uma função async!!
       if(consultaCEpConvertida.erro){
          throw Error('CEP não existente!');
       }
+      var cidade = document.getElementById('cidade');
+      var logradouro = document.getElementById('endereco');
+      var estado = document.getElementById('estado');
+
+      cidade.value = consultaCEpConvertida.localidade;
+      logradouro.value = consultaCEpConvertida.logradouro;
+      estado.value = consultaCEpConvertida.uf;
+
       return consultaCEpConvertida;
    }catch(erro){
-
+      mensagemErro.innerHTML = `<p>CEP inválido. Tente novamente.</p>`;
    }
 };
+
+var cep = document.getElementById('cep');
+cep.addEventListener("focusout", () => buscaEndereco(cep.value)); //focusout é quando clica fora do campo do formulário.
 
 
 
