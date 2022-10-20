@@ -7,6 +7,16 @@
     display: inline-block;
 }
 
+/* > pega o elemento que está dentro daquela class*/
+.container__botao:checked~.container__rotulo>.cabeçalho__menu-hamburguer{
+    background-image: url("/img/Menu\ Aberto.svg");
+}
+
+/* ~ procurar o próximo elemento que começa com o nome seguinte*/
+.container__botao:checked~.container__rotulo{
+    background: var(--azul-degrade);
+}
+
 .cabeçalho {
     background-color: var(--branco);
     display: flex;
@@ -65,6 +75,10 @@
     display: none;
 }
 
+.container__texto{
+    display: none;
+}
+
 /*se começar com mobile firts, então se usa o min-width para o media querie.
 se for desktop firts, entao se usa o max-width.*/
 @media screen and (min-width: 1024px){
@@ -83,8 +97,9 @@ se for desktop firts, entao se usa o max-width.*/
         display: flex;
     }
     .opcoes__item{
-       padding: 0 1em;
+       padding: 2em 1em;
        text-transform: uppercase;
+
     }
     .opcoes__link{
         text-decoration: none;
@@ -102,5 +117,34 @@ se for desktop firts, entao se usa o max-width.*/
     }
     .opcoes__botao{
         display: none;
+    }
+    .opcoes__botao:checked~.opcoes__rotulo>.opcoes__item{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+    .lista-menu__item:hover>.lista-menu__link{
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 1728px){
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .cabeçalho{
+        padding: 0 2em;
+    }
+    .opcoes{
+        margin-right: auto;
+    }
+    .container__texto{
+        display: block;
     }
 }
