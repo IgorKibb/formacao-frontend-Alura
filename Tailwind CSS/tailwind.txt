@@ -1,0 +1,7 @@
+As classes utilitárias representam as propriedades do CSS.
+Só usamos o que vamos utilizar para estilizar o elemento, evitado assim sobrepocição do CSS.
+
+os tons das cores do tailwind começam do 50 e vao até 900. quanto mais baixo for a numeração
+mas clara vai ser a cor, quanto mais alta, mais escura será.
+
+no tailwind podemos representar as porcentagens com frações.
