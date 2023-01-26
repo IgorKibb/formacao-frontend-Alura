@@ -5,3 +5,13 @@ os tons das cores do tailwind começam do 50 e vao até 900. quanto mais baixo f
 mas clara vai ser a cor, quanto mais alta, mais escura será.
 
 no tailwind podemos representar as porcentagens com frações.
+
+x : eixo horizontal, y : eixo vertical
+
+a medida do padding começa em 4, entao p-10 significa padding 10 = 40px
+
+a classe ring é uma classe especial do tailwind.
+
+quando colorimos um SVG utilizamos a classe proprietaria fill, tanto no tailwind quanto no CSS. [SEMPRE OLHAR A DOCUMENTAÇÃO]
+
+no tailwind já existe algumas animações pre-definidas. [REVER]
