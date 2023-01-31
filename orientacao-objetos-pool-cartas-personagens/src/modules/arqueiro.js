@@ -1,11 +1,12 @@
 import { Personagem } from "./personagem.js";
 
 export class Arqueiro extends Personagem{
-   tipo = 'Arqueiro';
+   static tipo = 'Arqueiro'; //Métodos estáticos não são chamados na instâncias da classe.
    destreza;
+   static descricao = 'Você tem o meu arco!'
 
-   constructor(nome, level, destreza){
-      super(nome, level);
+   constructor(nome, destreza){
+      super(nome);
       this.destreza = destreza;
    };
 

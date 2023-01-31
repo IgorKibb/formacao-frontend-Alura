@@ -4,10 +4,11 @@ export class Mago extends Personagem {
    elementoMagico
    levelMagico
    inteligencia
-   tipo = 'Mago'
+   static tipo = 'Mago'
+   static descricao = 'O mago é implacável!'
 
-   constructor(nome, level, elementoMagico, levelMagico, inteligencia){
-      super(nome, level) //extends e super //extends herda de outra classe e super herda o constructor do extends
+   constructor(nome, elementoMagico, levelMagico, inteligencia){
+      super(nome) //extends e super //extends herda de outra classe e super herda o constructor do extends
       this.elementoMagico = elementoMagico;
       this.levelMagico = levelMagico;
       this.inteligencia = inteligencia;
