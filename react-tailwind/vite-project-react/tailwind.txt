@@ -1,0 +1,8 @@
+https://nerdcave.com/tailwind-cheat-sheet
+
+o posstcss e o autoprefixer são bibliotecas acessórias que permitem o 
+reconhecimento e injeção dos estilos do Tailwind por parte do React, 
+e também possuem automatizações para nos permitir realizar configurações 
+via arquivo;
+
+o tailwindcss possui as lógicas internas e estilizações do Tailwind.
