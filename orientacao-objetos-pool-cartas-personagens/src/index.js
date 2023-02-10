@@ -21,4 +21,5 @@ const personagens = [magoAntonio, magaJulia, arqueiroBruno, arqueiroMagoChico, g
 
 new PersonagemView(personagens).render();
 
-console.log(Personagem.verficarVencedor(arqueiroMagoChico, magoAntonio))
+//console.log(Personagem.verficarVencedor(arqueiroMagoChico, magoAntonio))
+console.log(arqueiroMagoChico)
