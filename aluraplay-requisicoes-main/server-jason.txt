@@ -1,0 +1,5 @@
+npm init com o arquivo jason aberto, irá criara o pacote json.
+depois npm install jason-server para intalar o servidor local jason.
+depois para iniciar o servidor json-server --watch + o nome do aquivo jason.
+
+npm install -g json-server para quando o json-server não funcionar.
