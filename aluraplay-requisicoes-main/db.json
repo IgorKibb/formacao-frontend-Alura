@@ -90,6 +90,13 @@
       "url": "https://www.youtube.com/embed/UzWatUjuaNI",
       "imagem": "https://purr.objects-us-east-1.dream.io/i/OoNx6.jpg",
       "id": 12
+    },
+    {
+      "titulo": "Primeiros passos Next.js",
+      "descricao": "1 mil visualizações",
+      "url": "https://www.youtube.com/embed/slmtdlWNwcE",
+      "imagem": "https://purr.objects-us-east-1.dream.io/i/OoNx6.jpg",
+      "id": 13
     }
   ]
 }
