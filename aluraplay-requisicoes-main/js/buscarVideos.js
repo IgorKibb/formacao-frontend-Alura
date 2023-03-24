@@ -17,6 +17,10 @@ async function buscarVideos(evento){
    //vai criar um filho que vai ser anexado dentro da lista. REVER appendChild.
    busca.forEach(elemento => lista.appendChild(
       constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.iamgem))); //criou um card para cada filho.
+
+      if(busca.length == 0){
+         lista.innerHTML = `<h2 class="mensagem__titulo">Não existem vídeos com esse termo!</h2>`
+      }
 }
 
 const botaoDePesquisa = document.querySelector("[data-botao-pesquisa]");

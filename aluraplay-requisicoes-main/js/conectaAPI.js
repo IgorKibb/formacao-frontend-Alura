@@ -6,6 +6,7 @@ async function listaVideos() {
 }
 
 //função para adicionar novos vídeos no jason.
+//função para conectar ao servidor.
 async function criaVideo(titulo, descricao, url, imagem){
    const conexao = await fetch("http://localhost:3000/videos", {
       method: "POST", //requisição POST
@@ -19,7 +20,9 @@ async function criaVideo(titulo, descricao, url, imagem){
          imagem : imagem
       })
    });
-
+   if(!conexao.ok){
+      throw new Error("Não foi possível enviar o vídeo!")
+   }
    const conexaoConvertida = await conexao.json();
    return conexaoConvertida;
 }
