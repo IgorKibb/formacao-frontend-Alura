@@ -26,3 +26,10 @@ console.log(pessoa);
 
 pessoa = novaPessoa;
 console.log(pessoa);*/
+
+//Se quisermos, por exemplo, remover a propriedade aliado, 
+//podemos utilizar o operador delete:
+/* exemplo:
+delete pessoa.nome;
+assim: console.log(pessoa.nome) undefined
+ou podemos deletar como colchete, ex: delete pessoa["nome"]*/
